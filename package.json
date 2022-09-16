@@ -1,15 +1,22 @@
 {
-  "name": "data-structures",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "",
-    "lint": "npx eslint"
-  },
-  "author": "Alex Curran",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.23.1"
-  }
+    "name": "data-structures",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "npx eslint ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/apcurran/data-structures.git"
+    },
+    "author": "Alex Curran",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/apcurran/data-structures/issues"
+    },
+    "homepage": "https://github.com/apcurran/data-structures#readme",
+    "devDependencies": {
+        "eslint": "^8.23.1"
+    }
 }
