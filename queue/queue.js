@@ -54,6 +54,9 @@ class Queue {
         // delete node -> auto gc
         this.head = this.head.next;
 
+        // remove tail's state
+        if (this.length === 0) this.tail = null;
+
         return tempHead.value;
     }
 
