@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "",
+    "lint": "npx eslint"
   },
   "author": "Alex Curran",
   "license": "ISC",
