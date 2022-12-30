@@ -30,6 +30,9 @@ c.next = d;
  * @returns {ListNode} head of the modified list
  */ 
 function deleteValue(head, targetValue) {
+    // edge case where the beginning head needs to be deleted
+    if (head.value === targetValue) return head.next;
+
     let previousNode = null;
     let currentNode = head;
 
@@ -59,5 +62,5 @@ function printList(head) {
     return printList(head.next);
 }
 
-const newListHead = deleteValue(a, "c"); // returns a -> b -> d
+const newListHead = deleteValue(a, "a"); // returns a -> b -> d
 printList(newListHead);
