@@ -42,7 +42,8 @@
  * time: O(e)
  * space: O(e)
  * 
- * @param {object} graph 
+ * @param {object} graph
+ * @param {string} sourceNode
  * @returns {void}
  */
 function depthFirstPrint(graph, sourceNode) {
