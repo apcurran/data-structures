@@ -51,6 +51,8 @@ function depthFirstPrint(graph, sourceNode) {
     
     const neighborArr = graph[sourceNode];
 
+    // the loop acts as an implicit base case,
+    // if an arr is empty, the recursive func is never called
     for (let neighbor of neighborArr) {
         depthFirstPrint(graph, neighbor);
     }
