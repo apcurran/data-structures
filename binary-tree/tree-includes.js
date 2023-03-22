@@ -28,7 +28,7 @@ c.right = f;
 // d   e     f
 
 // /**
-//  * Solution 1 -- iterative
+//  * Solution 1 -- iterative BFS
 //  * Time: O(n^2) -- due to array.shift() inside of a loop
 //  * Space: O(n)
 //  * 
@@ -56,10 +56,13 @@ c.right = f;
 //             queue.push(current.right);
 //         }
 //     }
+
+//     // no equal value was found for target
+//     return false;
 // }
 
 /**
- * Solution 2 -- recursive
+ * Solution 1 -- iterative DFS
  * Time: O(n)
  * Space: O(n)
  * 
@@ -70,10 +73,44 @@ function treeIncludes(root, target) {
     // Check if tree is initially empty
     if (root === null) return false;
 
-    if (root.val === target) return true;
+    let stack = [root];
 
-    return treeIncludes(root.left, target) || treeIncludes(root.right, target);
+    while (stack.length > 0) {
+        const current = stack.pop();
+
+        // Return early if the target is found as the curr node val
+        if (current.val === target) return true;
+        
+        // Add child nodes of curr node, as long as the child nodes are not null
+        if (current.left) {
+            stack.push(current.left);
+        }
+
+        if (current.right) {
+            stack.push(current.right);
+        }
+    }
+
+    return false;
 }
+
+// /**
+//  * Solution 3 -- recursive
+//  * Time: O(n)
+//  * Space: O(n)
+//  * 
+//  * @param {ListNode} root 
+//  * @param {string} target 
+//  */
+// function treeIncludes(root, target) {
+//     // Check if tree is initially empty
+//     if (root === null) return false;
+
+//     if (root.val === target) return true;
+
+//     return treeIncludes(root.left, target) || treeIncludes(root.right, target);
+// }
 
 console.log( treeIncludes(a, "e") ); // true
 console.log( treeIncludes(null, "b") ); // false
+console.log( treeIncludes(a, "z") ); // false
