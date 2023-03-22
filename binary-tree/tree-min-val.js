@@ -28,7 +28,7 @@ c.right = f;
 // 9   10     4
 
 // /**
-//  * solution 1 -- iterative depth-first traversal
+//  * solution 1 -- iterative DFS
 //  * time: O(n)
 //  * space: O(n)
 //  * 
@@ -54,7 +54,7 @@ c.right = f;
 // }
 
 // /**
-//  * solution 2 -- iterative breadth-first traversal
+//  * solution 2 -- iterative BFS
 //  * time: O(n^2) due to array.shift() inside of loop
 //  * space: O(n)
 //  * 
