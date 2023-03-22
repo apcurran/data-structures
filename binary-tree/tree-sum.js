@@ -1,11 +1,11 @@
 "use strict";
 
 class ListNode {
-  constructor(val) {
-    this.val = val;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 const a = new ListNode(3);
@@ -37,38 +37,68 @@ c.right = f;
 //  */
 // function treeSum(root) {
 //     if (root === null) return 0;
-    
+
 //     let queue = [root];
 //     let sum = 0;
-    
+
 //     while (queue.length > 0) {
 //         const current = queue.shift();
 //         sum += current.val;
-        
+
 //         if (current.left !== null) {
 //             queue.push(current.left);
 //         }
-        
+
 //         if (current.right !== null) {
 //             queue.push(current.right);
 //         }
 //     }
-    
+
 //     return sum;
 // }
 
 /**
- * Solution 1 -- recursive (depth-first traversal)
- * Time: O(n)
- * Space: O(n) -- due to call stack
+ * Solution 2 -- BFS
+ * Time: O(n^2)
+ * Space: O(n) -- queue
  * 
  * @param {ListNode} root 
  * @returns {number}
  */
 function treeSum(root) {
     if (root === null) return 0;
-    
-    return root.val + treeSum(root.left) + treeSum(root.right);
+
+    let queue = [root];
+    let sum = 0;
+
+    while (queue.length > 0) {
+        const node = queue.shift();
+        sum += node.val;
+
+        if (node?.left) {
+            queue.push(node.left);
+        }
+
+        if (node?.right) {
+            queue.push(node.right);
+        }
+    }
+
+    return sum;
 }
 
-console.log( treeSum(a) ); // -> 21
+// /**
+//  * Solution 1 -- recursive (depth-first traversal)
+//  * Time: O(n)
+//  * Space: O(n) -- due to call stack
+//  * 
+//  * @param {ListNode} root 
+//  * @returns {number}
+//  */
+// function treeSum(root) {
+//     if (root === null) return 0;
+
+//     return root.val + treeSum(root.left) + treeSum(root.right);
+// }
+
+console.log(treeSum(a)); // -> 21
