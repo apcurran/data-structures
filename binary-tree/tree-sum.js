@@ -27,10 +27,40 @@ c.right = f;
 //  / \      \
 // 4   -2     1
 
+/**
+ * Solution 1 -- DFS iterative
+ * Time: O(n)
+ * Space: O(n)
+ * 
+ * @param {ListNode} root 
+ * @returns {number}
+ */
+function treeSum(root) {
+    if (root === null) return 0;
+
+    let stack = [root];
+    let sum = 0;
+
+    while (stack.length > 0) {
+        const current = stack.pop();
+        sum += current.val;
+        
+        if (current.right !== null) {
+            stack.push(current.right);
+        }
+
+        if (current.left !== null) {
+            stack.push(current.left);
+        }
+    }
+
+    return sum;
+}
+
 // /**
-//  * Solution 1 -- iterative
-//  * Time: O(n)
-//  * Space: O(n)
+//  * Solution 2 -- BFS
+//  * Time: O(n^2)
+//  * Space: O(n) -- queue
 //  * 
 //  * @param {ListNode} root 
 //  * @returns {number}
@@ -42,50 +72,20 @@ c.right = f;
 //     let sum = 0;
 
 //     while (queue.length > 0) {
-//         const current = queue.shift();
-//         sum += current.val;
+//         const node = queue.shift();
+//         sum += node.val;
 
-//         if (current.left !== null) {
-//             queue.push(current.left);
+//         if (node?.left) {
+//             queue.push(node.left);
 //         }
 
-//         if (current.right !== null) {
-//             queue.push(current.right);
+//         if (node?.right) {
+//             queue.push(node.right);
 //         }
 //     }
 
 //     return sum;
 // }
-
-/**
- * Solution 2 -- BFS
- * Time: O(n^2)
- * Space: O(n) -- queue
- * 
- * @param {ListNode} root 
- * @returns {number}
- */
-function treeSum(root) {
-    if (root === null) return 0;
-
-    let queue = [root];
-    let sum = 0;
-
-    while (queue.length > 0) {
-        const node = queue.shift();
-        sum += node.val;
-
-        if (node?.left) {
-            queue.push(node.left);
-        }
-
-        if (node?.right) {
-            queue.push(node.right);
-        }
-    }
-
-    return sum;
-}
 
 // /**
 //  * Solution 1 -- recursive (depth-first traversal)
