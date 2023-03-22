@@ -29,7 +29,7 @@ c.right = f;
 
 // /**
 //  * Solution 1 -- iterative
-//  * Time: O(n)
+//  * Time: O(n^2) -- due to array.shift() inside of a loop
 //  * Space: O(n)
 //  * 
 //  * @param {ListNode} root 
