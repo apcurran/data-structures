@@ -17,9 +17,9 @@ function breadthFirstPrint(graph, sourceNode) {
         console.log(currNode);
 
         // add neighbors to queue
-        const neighborsArr = graph[currNode];
+        const adjacentNeighbors = graph[currNode];
 
-        for (let neighbor of neighborsArr) {
+        for (let neighbor of adjacentNeighbors) {
             queue.push(neighbor);
         }
     }
