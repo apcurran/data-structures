@@ -93,10 +93,10 @@
  * @returns {boolean}
  */
 function hasPath(graph, src, dest) {
-    let queue = [src];
+    let stack = [src];
 
-    while (queue.length > 0) {
-        const current = queue.pop();
+    while (stack.length > 0) {
+        const current = stack.pop();
 
         if (current === dest) return true;
 
@@ -104,7 +104,7 @@ function hasPath(graph, src, dest) {
         const adjacencyArr = graph[current];
 
         for (let neighbor of adjacencyArr) {
-            queue.push(neighbor);
+            stack.push(neighbor);
         }
     }
 
