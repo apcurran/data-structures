@@ -38,12 +38,53 @@
 // };
 // console.log( hasPath(graph, "f", "k") ); // true
 
+// /**
+//  * Obj representing the adjacency list of a directed acyclic graph and two nodes (src, dest)
+//  * The func should return a bool indicating whether or not there exists a directed path between the src and dest nodes
+//  * 
+//  * solution 2 -- iterative bfs
+//  * time: O(n^2)
+//  * space: O(n)
+//  * 
+//  * @param {object} graph
+//  * @param {string} src
+//  * @param {string} dest
+//  * @returns {boolean}
+//  */
+// function hasPath(graph, src, dest) {
+//     let queue = [src];
+
+//     while (queue.length > 0) {
+//         const current = queue.shift();
+
+//         if (current === dest) return true;
+
+//         // otherwise, check neighbors
+//         const adjacencyArr = graph[current];
+
+//         for (let neighbor of adjacencyArr) {
+//             queue.push(neighbor);
+//         }
+//     }
+
+//     return false;
+// }
+
+// const graph = {
+//     f: ["g", "i"],
+//     g: ["h"],
+//     h: [],
+//     i: ["g", "k"],
+//     j: ["i"],
+//     k: []
+// };
+
 /**
  * Obj representing the adjacency list of a directed acyclic graph and two nodes (src, dest)
  * The func should return a bool indicating whether or not there exists a directed path between the src and dest nodes
  * 
- * solution 1 -- iterative bfs
- * time: O(n^2)
+ * solution 3 -- iterative DFS
+ * time: O(e)
  * space: O(n)
  * 
  * @param {object} graph
@@ -55,7 +96,7 @@ function hasPath(graph, src, dest) {
     let queue = [src];
 
     while (queue.length > 0) {
-        const current = queue.shift();
+        const current = queue.pop();
 
         if (current === dest) return true;
 
@@ -79,3 +120,4 @@ const graph = {
     k: []
 };
 console.log( hasPath(graph, "f", "k") ); // true
+console.log( hasPath(graph, "f", "j") ); // false
