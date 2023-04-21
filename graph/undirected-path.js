@@ -3,7 +3,7 @@
 /**
  * solution 1 -- recursion
  * time: O(e)
- * space: O(n)
+ * space: O(e)
  * 
  * @param {string[][]} edges 
  * @param {string} nodeA 
