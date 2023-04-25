@@ -11,11 +11,11 @@
  * @returns {number}
  */
 function connectedComponentsCount(graph) {
-    let vistedNodes = new Set();
+    let visitedNodes = new Set();
     let count = 0;
 
     for (let node in graph) {
-        const isNewComponent = exploreNeighborNodes(graph, node, vistedNodes);
+        const isNewComponent = exploreNeighborNodes(graph, node, visitedNodes);
 
         if (isNewComponent) count++;
     }
@@ -24,21 +24,22 @@ function connectedComponentsCount(graph) {
 }
 
 /**
+ * recursive DFS
  * 
  * @param {object} graph 
  * @param {string} currentNode 
- * @param {Set} vistedNodes
+ * @param {Set} visitedNodes
  * @returns {boolean}
  */
-function exploreNeighborNodes(graph, currentNode, vistedNodes) {
+function exploreNeighborNodes(graph, currentNode, visitedNodes) {
     const numCurrentNode = Number(currentNode);
 
-    if (vistedNodes.has(numCurrentNode)) return false;
+    if (visitedNodes.has(numCurrentNode)) return false;
 
-    vistedNodes.add(numCurrentNode);
+    visitedNodes.add(numCurrentNode);
 
     for (let neighbor of graph[currentNode]) {
-        exploreNeighborNodes(graph, neighbor, vistedNodes);
+        exploreNeighborNodes(graph, neighbor, visitedNodes);
     }
     // new node explored
     return true;
