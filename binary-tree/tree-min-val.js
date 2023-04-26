@@ -45,9 +45,9 @@ c.right = f;
 //         if (currNode.val < minVal) minVal = currNode.val;
 
 //         // traverse
-//         if (currNode.left !== null) stack.push(currNode.left);
-
 //         if (currNode.right !== null) stack.push(currNode.right);
+
+//         if (currNode.left !== null) stack.push(currNode.left);
 //     }
 
 //     return minVal;
