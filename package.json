@@ -17,6 +17,8 @@
     },
     "homepage": "https://github.com/apcurran/data-structures#readme",
     "devDependencies": {
-        "eslint": "^8.23.1"
+        "@eslint/js": "^9.25.1",
+        "@stylistic/eslint-plugin": "^4.2.0",
+        "eslint": "^9.25.1"
     }
 }
