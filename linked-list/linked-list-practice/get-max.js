@@ -16,26 +16,43 @@ a.next = b;
 b.next = c;
 c.next = d;
 
+// /**
+//  * solution 1 -- iterative
+//  * time: O(n)
+//  * space: O(1)
+//  * 
+//  * @param {ListNode} head 
+//  * @returns {number}
+//  */
+// function getMaxValue(head) {
+//     let current = head;
+//     let maxValue = -Infinity;
+
+//     while (current !== null) {
+//         // check for new max value
+//         maxValue = Math.max(maxValue, current.val);
+//         // move pointer to next node
+//         current = current.next;
+//     }
+
+//     return maxValue;
+// }
+
 /**
- * solution 1 -- iterative
+ * solution 2 -- recursive
  * time: O(n)
- * space: O(1)
+ * space: O(n) -- callstack
  * 
  * @param {ListNode} head 
  * @returns {number}
  */
-function getMaxValue(head) {
-    let current = head;
-    let maxValue = -Infinity;
+function getMaxValue(head, max = -Infinity) {
+    if (head === null) return max;
 
-    while (current !== null) {
-        // check for new max value
-        maxValue = Math.max(maxValue, current.val);
-        // move pointer to next node
-        current = current.next;
-    }
-
-    return maxValue;
+    // check for new max value
+    max = Math.max(max, head.val);
+    // move along to next node in chain
+    return getMaxValue(head.next, max);
 }
 
 console.log(getMaxValue(a)); // 16
