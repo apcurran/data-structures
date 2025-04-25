@@ -1,3 +1,4 @@
+import globals from "globals";
 import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
 import stylistic from "@stylistic/eslint-plugin";
@@ -8,6 +9,9 @@ export default defineConfig([
         files: ["**/*.{js,mjs,cjs}"],
         languageOptions: {
             sourceType: "commonjs",
+            globals: {
+                ...globals.node
+            }
         },
         plugins: {
             js,
