@@ -36,4 +36,24 @@ class LinkedList {
             current.next = newNode; // link at the end
         }
     }
+
+    toArray() {
+        let arr = [];
+        let current = this.head;
+
+        while (current !== null) {
+            // add node's value
+            arr.push(current.value);
+            // move to next node
+            current = current.next;
+        }
+
+        return arr;
+    }
 }
+
+let myList = new LinkedList();
+myList.append("a");
+myList.append("d");
+myList.append("h");
+console.log(myList.toArray());
