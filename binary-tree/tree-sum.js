@@ -31,8 +31,8 @@ c.right = f;
  * Solution 1 -- DFS iterative
  * Time: O(n)
  * Space: O(n)
- * 
- * @param {ListNode} root 
+ *
+ * @param {ListNode} root
  * @returns {number}
  */
 function treeSum(root) {
@@ -44,7 +44,7 @@ function treeSum(root) {
     while (stack.length > 0) {
         const current = stack.pop();
         sum += current.val;
-        
+
         if (current.right !== null) {
             stack.push(current.right);
         }
@@ -61,8 +61,8 @@ function treeSum(root) {
 //  * Solution 2 -- BFS
 //  * Time: O(n^2)
 //  * Space: O(n) -- queue
-//  * 
-//  * @param {ListNode} root 
+//  *
+//  * @param {ListNode} root
 //  * @returns {number}
 //  */
 // function treeSum(root) {
@@ -91,8 +91,8 @@ function treeSum(root) {
 //  * Solution 1 -- recursive (depth-first traversal)
 //  * Time: O(n)
 //  * Space: O(n) -- due to call stack
-//  * 
-//  * @param {ListNode} root 
+//  *
+//  * @param {ListNode} root
 //  * @returns {number}
 //  */
 // function treeSum(root) {

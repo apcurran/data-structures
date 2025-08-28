@@ -24,11 +24,11 @@ c.next = d;
 //  * solution 1 -- iterative
 //  * time: O(n)
 //  * space: O(1)
-//  * 
-//  * @param {ListNode} head 
+//  *
+//  * @param {ListNode} head
 //  * @param {string} targetValue
 //  * @returns {ListNode} head of the modified list
-//  */ 
+//  */
 // function deleteValue(head, targetValue) {
 //     // edge case where the beginning head needs to be deleted
 //     if (head.value === targetValue) return head.next;
@@ -54,11 +54,11 @@ c.next = d;
  * solution 2 -- recursive
  * time: O(n)
  * space: O(n)
- * 
- * @param {ListNode} head 
+ *
+ * @param {ListNode} head
  * @param {string} targetValue
  * @returns {ListNode} head of the modified list
- */ 
+ */
 function deleteValue(head, targetValue) {
     if (head.value === targetValue) return head.next;
 
@@ -68,9 +68,9 @@ function deleteValue(head, targetValue) {
 }
 
 /**
- * @param {ListNode} currentNode 
- * @param {ListNode|null} previousNode 
- * @param {string} targetValue 
+ * @param {ListNode} currentNode
+ * @param {ListNode|null} previousNode
+ * @param {string} targetValue
  * @returns {void}
  */
 function recurse(currentNode, previousNode, targetValue) {
@@ -89,7 +89,7 @@ function recurse(currentNode, previousNode, targetValue) {
 }
 
 /**
- * @param {ListNode} head 
+ * @param {ListNode} head
  * @returns {void}
  */
 function printList(head) {

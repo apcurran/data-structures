@@ -2,7 +2,7 @@
 
 class ListNode {
     /**
-     * @param {any} val 
+     * @param {any} val
      */
     constructor(val) {
         this.val = val;
@@ -17,7 +17,7 @@ class LinkedList {
     }
 
     /**
-     * @param {any} val 
+     * @param {any} val
      * @returns {void}
      */
     append(val) {
@@ -55,7 +55,7 @@ class LinkedList {
     }
 
     /**
-     * @param {any} target 
+     * @param {any} target
      * @returns {boolean}
      */
     contains(target) {

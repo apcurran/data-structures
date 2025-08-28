@@ -4,10 +4,10 @@
  * solution 1 -- recursion
  * time: O(e)
  * space: O(e)
- * 
- * @param {string[][]} edges 
- * @param {string} nodeA 
- * @param {string} nodeB 
+ *
+ * @param {string[][]} edges
+ * @param {string} nodeA
+ * @param {string} nodeB
  * @returns {boolean}
  */
 function undirectedPath(edges, nodeA, nodeB) {
@@ -17,15 +17,15 @@ function undirectedPath(edges, nodeA, nodeB) {
 }
 
 /**
- * @param {object} graph 
- * @param {string} src 
- * @param {string} dest 
+ * @param {object} graph
+ * @param {string} src
+ * @param {string} dest
  * @param {Set} visited
  * @returns {boolean}
  */
 function hasPath(graph, src, dest, visited) {
     if (src === dest) return true;
-    
+
     if (visited.has(src)) return false;
 
     // add curr node to visited Set
@@ -43,7 +43,7 @@ function hasPath(graph, src, dest, visited) {
 }
 
 /**
- * @param {string[][]} edges 
+ * @param {string[][]} edges
  * @returns {object}
  */
 function buildGraph(edges) {
@@ -72,7 +72,7 @@ const myEdges = [
     ["k", "i"],
     ["m", "k"],
     ["k", "l"],
-    ["o", "n"]
+    ["o", "n"],
 ];
 
-console.log( undirectedPath(myEdges, "j", "m") ); // true
+console.log(undirectedPath(myEdges, "j", "m")); // true

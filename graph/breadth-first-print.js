@@ -4,9 +4,9 @@
  * solution 1
  * time: O(n^2) -- calls array.shift() inside of while loop
  * space: O(n)
- * 
- * @param {object} graph 
- * @param {string} sourceNode 
+ *
+ * @param {object} graph
+ * @param {string} sourceNode
  * @returns {void}
  */
 function breadthFirstPrint(graph, sourceNode) {
@@ -34,4 +34,4 @@ const myGraph = {
     f: [],
 };
 
-console.log( breadthFirstPrint(myGraph, "a") ); // a c b e d f
+console.log(breadthFirstPrint(myGraph, "a")); // a c b e d f

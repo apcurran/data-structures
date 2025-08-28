@@ -37,8 +37,8 @@ d.next = e;
 // Time: O(n)
 // Space: O(n)
 /**
- * 
- * @param {ListNode} head 
+ *
+ * @param {ListNode} head
  * @returns {number}
  */
 function sumList(head) {
@@ -48,4 +48,4 @@ function sumList(head) {
     return head.val + sumList(head.next);
 }
 
-console.log( sumList(a) ); // 19
+console.log(sumList(a)); // 19

@@ -35,9 +35,9 @@ c.next = d;
 // Time: O(n)
 // Space: O(n)
 /**
- * 
- * @param {ListNode} head 
- * @param {string} target 
+ *
+ * @param {ListNode} head
+ * @param {string} target
  * @returns {boolean}
  */
 function linkedListFind(head, target) {
@@ -48,4 +48,4 @@ function linkedListFind(head, target) {
     return linkedListFind(head.next, target);
 }
 
-console.log( linkedListFind(a, "C") ); // true
+console.log(linkedListFind(a, "C")); // true

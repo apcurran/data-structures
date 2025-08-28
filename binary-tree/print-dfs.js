@@ -33,7 +33,7 @@ c.right = f;
  * Solution 1 -- recursive
  * Time: O(n)
  * Space: O(n)
- * 
+ *
  * @param {ListNode} root
  * @returns {void}
  */
@@ -42,7 +42,7 @@ c.right = f;
 //     if (root === null) return;
 
 //     console.log(root.val);
-    
+
 //     depthFirstValues(root.left);
 //     depthFirstValues(root.right);
 // }
@@ -51,7 +51,7 @@ c.right = f;
  * Solution 2 -- iterative dfs
  * Time: O(n)
  * Space: O(n)
- * 
+ *
  * @param {ListNode} root
  * @returns {void}
  */
@@ -63,12 +63,12 @@ function depthFirstValues(root) {
     while (stack.length > 0) {
         const currNode = stack.pop();
         console.log(currNode.val);
-        
+
         if (currNode.right !== null) stack.push(currNode.right);
 
         if (currNode.left !== null) stack.push(currNode.left);
     }
 }
 
-console.log( depthFirstValues(a) ); // prints 'a', 'b', 'd', 'e', 'c', 'f'
-console.log( depthFirstValues(null) ); // prints undefined
+console.log(depthFirstValues(a)); // prints 'a', 'b', 'd', 'e', 'c', 'f'
+console.log(depthFirstValues(null)); // prints undefined

@@ -31,7 +31,7 @@ c.right = f;
 //  * solution 1 -- iterative DFS
 //  * time: O(n)
 //  * space: O(n)
-//  * 
+//  *
 //  * @param {ListNode} root
 //  * @returns {number}
 //  */
@@ -57,7 +57,7 @@ c.right = f;
 //  * solution 2 -- iterative BFS
 //  * time: O(n^2) due to array.shift() inside of loop
 //  * space: O(n)
-//  * 
+//  *
 //  * @param {ListNode} root
 //  * @returns {number}
 //  */
@@ -83,7 +83,7 @@ c.right = f;
  * solution 3 -- recursive depth-first traversal
  * time: O(n)
  * space: O(n)
- * 
+ *
  * @param {ListNode} root
  * @returns {number}
  */

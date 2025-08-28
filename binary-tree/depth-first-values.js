@@ -27,7 +27,7 @@ c.right = f;
 //  / \     \
 // d   e     f
 
-// Solution 1 -- iterative 
+// Solution 1 -- iterative
 // Time: O(n)
 // Space: O(n)
 // function depthFirstValues(root) {
@@ -39,7 +39,7 @@ c.right = f;
 //     while (stack.length > 0) {
 //         const currentNode = stack.pop();
 //         resultArr.push(currentNode.val);
-        
+
 //         if (currentNode.right) {
 //             stack.push(currentNode.right);
 //         }
@@ -56,7 +56,7 @@ c.right = f;
  * Solution 2 -- recursive
  * Time: O(n)
  * Space: O(n)
- * 
+ *
  * @param {ListNode} root
  * @returns {string[]}
  */
@@ -72,5 +72,5 @@ function depthFirstValues(root) {
     return [root.val, ...leftValues, ...rightValues];
 }
 
-console.log( depthFirstValues(a) ); // [ 'a', 'b', 'd', 'e', 'c', 'f' ]
+console.log(depthFirstValues(a)); // [ 'a', 'b', 'd', 'e', 'c', 'f' ]
 // console.log( depthFirstValues(null) ); // []

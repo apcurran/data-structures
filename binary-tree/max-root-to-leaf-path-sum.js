@@ -31,8 +31,8 @@ c.right = f;
  * solution 1 -- recursive depth-first traversal
  * time: O(n)
  * space: O(n)
- * 
- * @param {ListNode} root 
+ *
+ * @param {ListNode} root
  * @returns {number}
  */
 function maxPathSum(root) {
@@ -48,4 +48,4 @@ function maxPathSum(root) {
     return maxChildPathSum + root.val;
 }
 
-console.log( maxPathSum(a) ); // 18
+console.log(maxPathSum(a)); // 18

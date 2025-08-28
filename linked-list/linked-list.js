@@ -9,7 +9,7 @@ class LinkedList {
     append(value) {
         const newNode = {
             value: value,
-            next: null
+            next: null,
         };
 
         if (this.tail) {
@@ -27,7 +27,7 @@ class LinkedList {
     prepend(value) {
         const newNode = {
             value: value,
-            next: this.head
+            next: this.head,
         };
 
         this.head = newNode;
@@ -44,7 +44,7 @@ class LinkedList {
         if (existingNode) {
             const newNode = {
                 value: value,
-                next: existingNode.next
+                next: existingNode.next,
             };
 
             existingNode.next = newNode;
@@ -66,7 +66,7 @@ class LinkedList {
 
         return null;
     }
-    
+
     remove(value) {
         if (!this.head) return null;
 

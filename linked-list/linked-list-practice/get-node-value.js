@@ -20,9 +20,9 @@ c.next = d;
  * Iterative solution
  * Time: O(n)
  * Space: O(1)
- * 
- * @param {ListNode} head 
- * @param {number} index 
+ *
+ * @param {ListNode} head
+ * @param {number} index
  * @returns {string|null}
  */
 function getNodeValue(head, index) {
@@ -53,5 +53,5 @@ function getNodeValue(head, index) {
 //     return getNodeValue(head.next, index - 1);
 // }
 
-console.log( getNodeValue(a, 2) ); // "C"
-console.log( getNodeValue(a, 7) ); // null
+console.log(getNodeValue(a, 2)); // "C"
+console.log(getNodeValue(a, 7)); // null

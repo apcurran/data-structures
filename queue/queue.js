@@ -16,8 +16,8 @@ class Queue {
 
     /**
      * add to the back of the queue
-     * 
-     * @param {QueueNode} itemVal 
+     *
+     * @param {QueueNode} itemVal
      * @returns {void}
      */
     enqueue(itemVal) {
@@ -40,7 +40,7 @@ class Queue {
 
     /**
      * remove from the front of the queue
-     * 
+     *
      * @returns {number|string|null}
      */
     dequeue() {

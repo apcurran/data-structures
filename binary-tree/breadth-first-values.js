@@ -31,12 +31,12 @@ c.right = f;
  * Solution -- iterative
  * time: O(n^2) -- due to array.shift() being O(n) op within a loop
  * space: O(n)
- * 
- * @param {ListNode} root 
+ *
+ * @param {ListNode} root
  * @returns {string[]}
  */
 function breadthFirstValues(root) {
-    if (root === null) return []; 
+    if (root === null) return [];
 
     let queue = [root];
     let values = [];
@@ -53,4 +53,4 @@ function breadthFirstValues(root) {
     return values;
 }
 
-console.log( breadthFirstValues(a) ); // [ 'a', 'b', 'c', 'd', 'e', 'f' ]
+console.log(breadthFirstValues(a)); // [ 'a', 'b', 'c', 'd', 'e', 'f' ]

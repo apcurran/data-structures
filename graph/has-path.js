@@ -3,11 +3,11 @@
 // /**
 //  * Obj representing the adjacency list of a directed acyclic graph and two nodes (src, dest)
 //  * The func should return a bool indicating whether or not there exists a directed path between the src and dest nodes
-//  * 
+//  *
 //  * solution 1 -- recursive dfs
 //  * time: O(e)
 //  * space: O(e)
-//  * 
+//  *
 //  * @param {object} graph
 //  * @param {string} src
 //  * @param {string} dest
@@ -41,11 +41,11 @@
 // /**
 //  * Obj representing the adjacency list of a directed acyclic graph and two nodes (src, dest)
 //  * The func should return a bool indicating whether or not there exists a directed path between the src and dest nodes
-//  * 
+//  *
 //  * solution 2 -- iterative bfs
 //  * time: O(n^2)
 //  * space: O(n)
-//  * 
+//  *
 //  * @param {object} graph
 //  * @param {string} src
 //  * @param {string} dest
@@ -82,11 +82,11 @@
 /**
  * Obj representing the adjacency list of a directed acyclic graph and two nodes (src, dest)
  * The func should return a bool indicating whether or not there exists a directed path between the src and dest nodes
- * 
+ *
  * solution 3 -- iterative DFS
  * time: O(e)
  * space: O(n)
- * 
+ *
  * @param {object} graph
  * @param {string} src
  * @param {string} dest
@@ -117,7 +117,7 @@ const graph = {
     h: [],
     i: ["g", "k"],
     j: ["i"],
-    k: []
+    k: [],
 };
-console.log( hasPath(graph, "f", "k") ); // true
-console.log( hasPath(graph, "f", "j") ); // false
+console.log(hasPath(graph, "f", "k")); // true
+console.log(hasPath(graph, "f", "j")); // false

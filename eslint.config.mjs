@@ -10,8 +10,8 @@ export default defineConfig([
         languageOptions: {
             sourceType: "commonjs",
             globals: {
-                ...globals.node
-            }
+                ...globals.node,
+            },
         },
         plugins: {
             js,

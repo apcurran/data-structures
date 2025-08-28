@@ -31,8 +31,8 @@ c.next = d;
 
 // Recursive solution
 /**
- * 
- * @param {ListNode} head 
+ *
+ * @param {ListNode} head
  * @returns {void}
  */
 function printLinkedList(head) {

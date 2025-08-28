@@ -31,9 +31,9 @@ c.right = f;
 //  * Solution 1 -- iterative BFS
 //  * Time: O(n^2) -- due to array.shift() inside of a loop
 //  * Space: O(n)
-//  * 
-//  * @param {ListNode} root 
-//  * @param {string} target 
+//  *
+//  * @param {ListNode} root
+//  * @param {string} target
 //  */
 // function treeIncludes(root, target) {
 //     // Check if tree is initially empty
@@ -46,7 +46,7 @@ c.right = f;
 
 //         // Return early if the target is found as the curr node val
 //         if (current.val === target) return true;
-        
+
 //         // Add child nodes of curr node, as long as the child nodes are not null
 //         if (current.left) {
 //             queue.push(current.left);
@@ -65,9 +65,9 @@ c.right = f;
  * Solution 1 -- iterative DFS
  * Time: O(n)
  * Space: O(n)
- * 
- * @param {ListNode} root 
- * @param {string} target 
+ *
+ * @param {ListNode} root
+ * @param {string} target
  */
 function treeIncludes(root, target) {
     // Check if tree is initially empty
@@ -80,7 +80,7 @@ function treeIncludes(root, target) {
 
         // Return early if the target is found as the curr node val
         if (current.val === target) return true;
-        
+
         // Add child nodes of curr node, as long as the child nodes are not null
         if (current.left) {
             stack.push(current.left);
@@ -98,9 +98,9 @@ function treeIncludes(root, target) {
 //  * Solution 3 -- recursive
 //  * Time: O(n)
 //  * Space: O(n)
-//  * 
-//  * @param {ListNode} root 
-//  * @param {string} target 
+//  *
+//  * @param {ListNode} root
+//  * @param {string} target
 //  */
 // function treeIncludes(root, target) {
 //     // Check if tree is initially empty
@@ -111,6 +111,6 @@ function treeIncludes(root, target) {
 //     return treeIncludes(root.left, target) || treeIncludes(root.right, target);
 // }
 
-console.log( treeIncludes(a, "e") ); // true
-console.log( treeIncludes(null, "b") ); // false
-console.log( treeIncludes(a, "z") ); // false
+console.log(treeIncludes(a, "e")); // true
+console.log(treeIncludes(null, "b")); // false
+console.log(treeIncludes(a, "z")); // false

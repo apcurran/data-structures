@@ -20,8 +20,8 @@ c.next = d;
 //  * solution 1 -- iterative
 //  * time: O(n)
 //  * space: O(1)
-//  * 
-//  * @param {ListNode} head 
+//  *
+//  * @param {ListNode} head
 //  * @returns {number}
 //  */
 // function getMaxValue(head) {
@@ -42,8 +42,8 @@ c.next = d;
  * solution 2 -- recursive
  * time: O(n)
  * space: O(n) -- callstack
- * 
- * @param {ListNode} head 
+ *
+ * @param {ListNode} head
  * @returns {number}
  */
 function getMaxValue(head, max = -Infinity) {

@@ -25,14 +25,14 @@ x.next = y;
 //  * If one of the linked lists is longer than the other,
 //  * the resulting list should terminate with the remaining nodes.
 //  * The function should return the head of the zippered linked list.
-//  * 
+//  *
 //  * Iterative solution
 //  * n = len of list1
 //  * m = len of list2
 //  *
 //  * Time: O(min(n, m))
 //  * Space: O(1)
-//  * 
+//  *
 //  * @param {object} head1
 //  * @param {object} head2
 //  * @returns {object}
@@ -71,15 +71,15 @@ x.next = y;
  * If one of the linked lists is longer than the other,
  * the resulting list should terminate with the remaining nodes.
  * The function should return the head of the zippered linked list.
- * 
+ *
  * Recursive solution
- * 
+ *
  * n = len of list1
  * m = len of list2
  *
  * Time: O(min(n, m))
  * Space: O(min(n, m))
- * 
+ *
  * @param {ListNode} head1
  * @param {ListNode} head2
  * @returns {ListNode|null}
@@ -99,4 +99,4 @@ function zipperLists(head1, head2) {
     return head1;
 }
 
-console.log( zipperLists(a, x) ); // a -> x -> b -> y -> c
+console.log(zipperLists(a, x)); // a -> x -> b -> y -> c

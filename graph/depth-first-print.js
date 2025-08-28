@@ -6,8 +6,8 @@
 //  * e = num of edges
 //  * time: O(e)
 //  * space: O(n)
-//  * 
-//  * @param {object} graph 
+//  *
+//  * @param {object} graph
 //  * @returns {void}
 //  */
 // function depthFirstPrint(graph, sourceNode) {
@@ -41,14 +41,14 @@
  * e = num of edges
  * time: O(e)
  * space: O(e)
- * 
+ *
  * @param {object} graph
  * @param {string} sourceNode
  * @returns {void}
  */
 function depthFirstPrint(graph, sourceNode) {
     console.log(sourceNode);
-    
+
     const neighborArr = graph[sourceNode];
 
     // the loop acts as an implicit base case,
@@ -67,4 +67,4 @@ const myGraph = {
     f: [],
 };
 
-console.log( depthFirstPrint(myGraph, "a") ); // a b d f c e
+console.log(depthFirstPrint(myGraph, "a")); // a b d f c e
