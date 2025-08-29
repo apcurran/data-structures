@@ -23,7 +23,7 @@ class LinkedList {
      * @param {number} value
      */
     append(value) {
-        const newNode = new ListNode(value);
+        let newNode = new ListNode(value);
 
         if (!this.head) {
             // empty list
@@ -49,7 +49,7 @@ class LinkedList {
      * @param {number} value
      */
     prepend(value) {
-        const newNode = new ListNode(value);
+        let newNode = new ListNode(value);
         // link new node's head to old head
         newNode.next = this.head;
         this.head = newNode;
