@@ -57,6 +57,42 @@ class LinkedList {
         this.length++;
     }
 
+    /**
+     * add value at specific index
+     *
+     * @param {number} index
+     * @param {number} value
+     */
+    insertAt(index, value) {
+        if (index === 0) {
+            this.prepend(value);
+
+            return;
+        }
+
+        if (index >= this.length) {
+            this.append(value);
+
+            return;
+        }
+
+        let current = this.head;
+        let i = 0;
+
+        // traverse to the node just before target index
+        while (i < index - 1 && current.next !== null) {
+            current = current.next;
+            i++;
+        }
+
+        let newNode = new ListNode(value);
+        newNode.next = current?.next;
+        current.next = newNode;
+
+        // keep up total
+        this.length++;
+    }
+
     toArray() {
         let arr = [];
         let current = this.head;
@@ -77,4 +113,5 @@ myList.append("a");
 myList.append("d");
 myList.append("h");
 myList.prepend("z");
+myList.insertAt(2, "y");
 console.log(myList.toArray());
