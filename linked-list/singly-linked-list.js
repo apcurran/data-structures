@@ -17,6 +17,9 @@ class LinkedList {
     }
 
     /**
+     * creates a node,
+     * adds to the end
+     *
      * @param {number} value
      */
     append(value) {
@@ -35,6 +38,23 @@ class LinkedList {
 
             current.next = newNode; // link at the end
         }
+
+        this.length++;
+    }
+
+    /**
+     * creates a node,
+     * adds to the beginning
+     *
+     * @param {number} value
+     */
+    prepend(value) {
+        const newNode = new ListNode(value);
+        // link new node's head to old head
+        newNode.next = this.head;
+        this.head = newNode;
+        // keep running total
+        this.length++;
     }
 
     toArray() {
@@ -56,4 +76,5 @@ let myList = new LinkedList();
 myList.append("a");
 myList.append("d");
 myList.append("h");
+myList.prepend("z");
 console.log(myList.toArray());
