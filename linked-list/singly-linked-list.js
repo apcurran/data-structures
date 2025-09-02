@@ -2,9 +2,9 @@ class ListNode {
     /**
      * @param {any} value
      */
-    constructor(value) {
-        this.value = value;
-        this.next = null; // pointer connecting to next node in list
+    constructor(value = 0, next = null) {
+        this.val = value;
+        this.next = next; // pointer connecting to next node in list
     }
 }
 
@@ -154,4 +154,4 @@ class LinkedList {
 // myList.removeAt(2);
 // console.log(myList.toArray());
 
-export { LinkedList };
+export { LinkedList, ListNode };
