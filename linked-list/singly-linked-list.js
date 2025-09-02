@@ -64,6 +64,10 @@ class LinkedList {
      * @param {any} value
      */
     insertAt(index, value) {
+        if (index < 0 || index > this.length) {
+            throw new Error("Provided index out of bounds");
+        }
+
         if (index === 0) {
             this.prepend(value);
 
