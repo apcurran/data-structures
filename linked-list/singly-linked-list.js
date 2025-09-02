@@ -93,6 +93,40 @@ class LinkedList {
         this.length++;
     }
 
+    /**
+     * @param {number} index
+     * @returns {any} removed node value
+     */
+    removeAt(index) {
+        if (index < 0 || index >= this.length) {
+            throw new Error("Index out of bounds");
+        }
+
+        if (index === 0) {
+            const removed = this.head;
+            this.head = this.head.next;
+            this.length--;
+
+            return removed.value;
+        }
+
+        let current = this.head;
+        let i = 0;
+
+        while (i < index - 1) {
+            current = current.next;
+            i++;
+        }
+
+        // remove node
+        const removed = current.next;
+        current.next = removed.next;
+        // update total
+        this.length--;
+
+        return removed.value;
+    }
+
     toArray() {
         let arr = [];
         let current = this.head;
@@ -114,4 +148,6 @@ myList.append("d");
 myList.append("h");
 myList.prepend("z");
 myList.insertAt(2, "y");
+console.log(myList.toArray());
+myList.removeAt(2);
 console.log(myList.toArray());
