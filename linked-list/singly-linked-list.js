@@ -2,7 +2,7 @@
 
 class ListNode {
     /**
-     * @param {number} value
+     * @param {any} value
      */
     constructor(value) {
         this.value = value;
@@ -20,7 +20,7 @@ class LinkedList {
      * creates a node,
      * adds to the end
      *
-     * @param {number} value
+     * @param {any} value
      */
     append(value) {
         let newNode = new ListNode(value);
@@ -46,7 +46,7 @@ class LinkedList {
      * creates a node,
      * adds to the beginning
      *
-     * @param {number} value
+     * @param {any} value
      */
     prepend(value) {
         let newNode = new ListNode(value);
@@ -61,7 +61,7 @@ class LinkedList {
      * add value at specific index
      *
      * @param {number} index
-     * @param {number} value
+     * @param {any} value
      */
     insertAt(index, value) {
         if (index === 0) {
