@@ -1,5 +1,3 @@
-"use strict";
-
 class ListNode {
     /**
      * @param {any} value
@@ -146,14 +144,14 @@ class LinkedList {
     }
 }
 
-let myList = new LinkedList();
-myList.append("a");
-myList.append("d");
-myList.append("h");
-myList.prepend("z");
-myList.insertAt(2, "y");
-console.log(myList.toArray());
-myList.removeAt(2);
-console.log(myList.toArray());
+// let myList = new LinkedList();
+// myList.append("a");
+// myList.append("d");
+// myList.append("h");
+// myList.prepend("z");
+// myList.insertAt(2, "y");
+// console.log(myList.toArray());
+// myList.removeAt(2);
+// console.log(myList.toArray());
 
 export { LinkedList };
