@@ -155,3 +155,5 @@ myList.insertAt(2, "y");
 console.log(myList.toArray());
 myList.removeAt(2);
 console.log(myList.toArray());
+
+export { LinkedList };
