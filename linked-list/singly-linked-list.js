@@ -123,11 +123,9 @@ class LinkedList {
         }
 
         let current = this.head;
-        let i = 0;
 
-        while (i < index - 1) {
+        for (let i = 0; i < index - 1; i++) {
             current = current.next;
-            i++;
         }
 
         // remove node
