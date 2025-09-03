@@ -1,9 +1,9 @@
 class ListNode {
     /**
-     * @param {any} value
+     * @param {any} val
      */
-    constructor(value = 0, next = null) {
-        this.val = value;
+    constructor(val = 0, next = null) {
+        this.val = val;
         this.next = next; // pointer connecting to next node in list
     }
 }
@@ -11,6 +11,7 @@ class ListNode {
 class LinkedList {
     constructor() {
         this.head = null; // start
+        this.tail = null; // end
         this.length = 0;
     }
 
@@ -18,23 +19,20 @@ class LinkedList {
      * creates a node,
      * adds to the end
      *
-     * @param {any} value
+     * @param {any} val
      */
-    append(value) {
-        let newNode = new ListNode(value);
+    append(val) {
+        let newNode = new ListNode(val);
 
         if (!this.head) {
             // empty list
             this.head = newNode;
+            this.tail = newNode;
         } else {
-            // pre-existing list, add to end
-            let current = this.head;
-
-            while (current.next !== null) {
-                current = current.next;
-            }
-
-            current.next = newNode; // link at the end
+            // attach
+            this.tail.next = newNode;
+            // move pointer forward
+            this.tail = newNode;
         }
 
         this.length++;
@@ -44,13 +42,20 @@ class LinkedList {
      * creates a node,
      * adds to the beginning
      *
-     * @param {any} value
+     * @param {any} val
      */
-    prepend(value) {
-        let newNode = new ListNode(value);
-        // link new node's head to old head
-        newNode.next = this.head;
-        this.head = newNode;
+    prepend(val) {
+        let newNode = new ListNode(val);
+
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            // link new node's head to old head
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+
         // keep running total
         this.length++;
     }
@@ -59,21 +64,21 @@ class LinkedList {
      * add value at specific index
      *
      * @param {number} index
-     * @param {any} value
+     * @param {any} val
      */
-    insertAt(index, value) {
+    insertAt(index, val) {
         if (index < 0 || index > this.length) {
             throw new Error("Provided index out of bounds");
         }
 
         if (index === 0) {
-            this.prepend(value);
+            this.prepend(val);
 
             return;
         }
 
         if (index >= this.length) {
-            this.append(value);
+            this.append(val);
 
             return;
         }
@@ -87,8 +92,8 @@ class LinkedList {
             i++;
         }
 
-        let newNode = new ListNode(value);
-        newNode.next = current?.next;
+        let newNode = new ListNode(val);
+        newNode.next = current.next;
         current.next = newNode;
 
         // keep up total
@@ -107,9 +112,14 @@ class LinkedList {
         if (index === 0) {
             const removed = this.head;
             this.head = this.head.next;
+
+            if (this.length === 1) {
+                this.tail = null; // empty list
+            }
+
             this.length--;
 
-            return removed.value;
+            return removed.val;
         }
 
         let current = this.head;
@@ -123,10 +133,15 @@ class LinkedList {
         // remove node
         const removed = current.next;
         current.next = removed.next;
+
+        if (removed === this.tail) {
+            this.tail = current; // update if last
+        }
+
         // update total
         this.length--;
 
-        return removed.value;
+        return removed.val;
     }
 
     toArray() {
@@ -135,7 +150,7 @@ class LinkedList {
 
         while (current !== null) {
             // add node's value
-            arr.push(current.value);
+            arr.push(current.val);
             // move to next node
             current = current.next;
         }
@@ -144,14 +159,14 @@ class LinkedList {
     }
 }
 
-// let myList = new LinkedList();
-// myList.append("a");
-// myList.append("d");
-// myList.append("h");
-// myList.prepend("z");
-// myList.insertAt(2, "y");
-// console.log(myList.toArray());
-// myList.removeAt(2);
-// console.log(myList.toArray());
+let myList = new LinkedList();
+myList.append("a");
+myList.append("d");
+myList.append("h");
+myList.prepend("z");
+myList.insertAt(2, "y");
+console.log(myList.toArray());
+myList.removeAt(2);
+console.log(myList.toArray());
 
 export { LinkedList, ListNode };
