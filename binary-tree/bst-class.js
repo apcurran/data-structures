@@ -22,6 +22,7 @@ class BinarySearchTree {
     insert(value) {
         let newNode = new TreeNode(value);
 
+        // empty tree situation
         if (this.root === null) {
             this.root = newNode;
 
