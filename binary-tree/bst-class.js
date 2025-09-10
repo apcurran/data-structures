@@ -92,3 +92,5 @@ class BinarySearchTree {
 // console.log(myBST.contains(5)); // true
 // console.log(myBST.contains(25)); // false
 // console.log(JSON.stringify(myBST));
+
+export { BinarySearchTree, TreeNode };
