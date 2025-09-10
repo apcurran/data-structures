@@ -58,6 +58,29 @@ class BinarySearchTree {
             }
         }
     }
+
+    /**
+     * @param {number} targetValue
+     * @returns {boolean}
+     */
+    contains(targetValue) {
+        let temp = this.root;
+
+        while (temp !== null) {
+            if (temp.value === targetValue) return true;
+
+            if (targetValue < temp.value) {
+                // go left
+                temp = temp.left;
+            } else {
+                // go right
+                temp = temp.right;
+            }
+        }
+
+        // no node value found equal to target
+        return false;
+    }
 }
 
 // let myBST = new BinarySearchTree();
@@ -66,4 +89,6 @@ class BinarySearchTree {
 // myBST.insert(5);
 // myBST.insert(9);
 // myBST.insert(3);
+// console.log(myBST.contains(5)); // true
+// console.log(myBST.contains(25)); // false
 // console.log(JSON.stringify(myBST));
