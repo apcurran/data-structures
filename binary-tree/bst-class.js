@@ -83,6 +83,26 @@ class BinarySearchTree {
     }
 
     /**
+     * @param {any} targetValue
+     * @param {TreeNode} current
+     * @returns {boolean}
+     */
+    containsRecursive(targetValue, current = this.root) {
+        // base case, not found
+        if (current === null) return false;
+        // base case, found
+        if (targetValue === current.value) return true;
+
+        if (targetValue < current.value) {
+            // go left subtree
+            return this.containsRecursive(targetValue, current.left);
+        } else {
+            // go right subtree
+            return this.containsRecursive(targetValue, current.right);
+        }
+    }
+
+    /**
      * @param {TreeNode} node
      * @returns {TreeNode}
      */
@@ -105,6 +125,9 @@ class BinarySearchTree {
 // myBST.insert(3);
 // console.log(myBST.contains(5)); // true
 // console.log(myBST.contains(25)); // false
+// console.log(myBST.containsRecursive(5)); // true
+// console.log(myBST.containsRecursive(25)); // false
+
 // console.log(myBST.findMin(myBST.root)); // TreeNode 1
 
 // console.log(JSON.stringify(myBST));
