@@ -81,6 +81,20 @@ class BinarySearchTree {
         // no node value found equal to target
         return false;
     }
+
+    /**
+     * @param {TreeNode} node
+     * @returns {TreeNode}
+     */
+    findMin(node) {
+        while (node.left !== null) {
+            // go left for smaller and smaller node values
+            node = node.left;
+        }
+
+        // arrived at min
+        return node;
+    }
 }
 
 // let myBST = new BinarySearchTree();
@@ -91,6 +105,8 @@ class BinarySearchTree {
 // myBST.insert(3);
 // console.log(myBST.contains(5)); // true
 // console.log(myBST.contains(25)); // false
+// console.log(myBST.findMin(myBST.root)); // TreeNode 1
+
 // console.log(JSON.stringify(myBST));
 
 export { BinarySearchTree, TreeNode };
