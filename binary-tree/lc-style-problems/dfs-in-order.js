@@ -31,6 +31,36 @@ function dfsInOrder(root) {
     return results;
 }
 
+/**
+ * solution 2 -- iterative
+ * time: O(n)
+ * space: O(n)
+ *
+ * @param {TreeNode} root
+ * @returns {number[]}
+ */
+function dfsInOrderIterative(root) {
+    let stack = [];
+    let results = [];
+    let current = root;
+
+    while (current !== null || stack.length > 0) {
+        // add left first
+        while (current !== null) {
+            stack.push(current);
+            current = current.left;
+        }
+
+        current = stack.pop();
+        // add value
+        results.push(current.value);
+        // check right
+        current = current.right;
+    }
+
+    return results;
+}
+
 let myBST = new BinarySearchTree();
 myBST.insert(47);
 myBST.insert(21);
@@ -47,3 +77,4 @@ myBST.insert(82);
 //  18  27 52  82
 
 console.log(dfsInOrder(myBST.root)); // [18, 21, 27, 47, 52, 76, 82] sorted values
+console.log(dfsInOrderIterative(myBST.root)); // [18, 21, 27, 47, 52, 76, 82]
