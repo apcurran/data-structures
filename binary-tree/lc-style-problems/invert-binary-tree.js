@@ -11,12 +11,10 @@ import { BinarySearchTree, TreeNode } from "../bst-class.js";
 function invertTree(root) {
     if (root === null) return null;
 
-    const tempLeft = root.left;
-    root.left = root.right;
-    root.right = tempLeft;
-
-    invertTree(root.left);
-    invertTree(root.right);
+    const left = invertTree(root.left);
+    const right = invertTree(root.right);
+    root.left = right;
+    root.right = left;
 
     return root;
 }
@@ -62,5 +60,5 @@ myBST.insert(3);
 myBST.insert(6);
 myBST.insert(9);
 
-// console.log(invertTree(myBST.root)); // [4,7,2,9,6,3,1]
-console.log(invertTreeIterative(myBST.root)); // [4,7,2,9,6,3,1]
+console.log(invertTree(myBST.root)); // [4,7,2,9,6,3,1]
+// console.log(invertTreeIterative(myBST.root)); // [4,7,2,9,6,3,1]
