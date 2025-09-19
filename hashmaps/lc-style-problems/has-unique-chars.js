@@ -14,3 +14,5 @@ function hasUniqueChars(str) {
 
 console.log(hasUniqueChars("abcdefg")); // true
 console.log(hasUniqueChars("hello")); // false
+console.log(hasUniqueChars("")); // true
+console.log(hasUniqueChars("0123456789")); // true
