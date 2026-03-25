@@ -19,7 +19,7 @@
     },
     "homepage": "https://github.com/apcurran/data-structures#readme",
     "devDependencies": {
-        "oxlint": "^1.50.0",
+        "oxlint": "^1.57.0",
         "prettier": "3.8.1"
     }
 }
