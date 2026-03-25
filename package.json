@@ -2,23 +2,23 @@
     "name": "data-structures",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "homepage": "https://github.com/apcurran/data-structures#readme",
+    "bugs": {
+        "url": "https://github.com/apcurran/data-structures/issues"
+    },
+    "license": "ISC",
+    "author": "Alex Curran",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/apcurran/data-structures.git"
+    },
     "type": "module",
+    "main": "index.js",
     "scripts": {
         "lint": "npx oxlint .",
         "fmt": "npx oxfmt",
         "fmt:check": "npx oxfmt --check"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/apcurran/data-structures.git"
-    },
-    "author": "Alex Curran",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/apcurran/data-structures/issues"
-    },
-    "homepage": "https://github.com/apcurran/data-structures#readme",
     "devDependencies": {
         "oxfmt": "^0.42.0",
         "oxlint": "^1.57.0"
